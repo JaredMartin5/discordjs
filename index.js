@@ -35,29 +35,27 @@ client.on('messageCreate', async message => {
 
 	if (message.content.toLowerCase() === '!deploy' && message.author.id === client.application?.owner.id) {
 		const data = {
-			name: 'weather',
-			description: 'Search for the current weather in your desired city!',
-			options: [{
-				name: 'location',
-				type: 'STRING',
-				description: 'City, State',
-				required: true,
-			}],
+			name: 'ping',
+			description: 'Replies with Pong!',
+
 		};
 
 		const command = await client.guilds.cache.get(guildId)?.commands.create(data);
+		// 		command.delete()
+		//   .then(console.log)
+		//   .catch(console.error);
 		console.log(command);
 	}
 });
-		client.login(token);
-	
+client.login(token);
+
 
 
 
 
 //const PREFIX = "!";
 // client.on('messageCreate', (message) => {
-  
+
 //     if (message.author.bot) return;
 
 //     if (message.content.startsWith(PREFIX)) {
@@ -71,7 +69,7 @@ client.on('messageCreate', async message => {
 //                 return message.reply('you do not have permission to kick people.')
 
 //             const member = message.mentions.members.first();
-            
+
 //             if (!member) return message.reply("Please mention a valid member of this server");
 //             if (!member.kickable) return message.reply("I cannot kick this member!");
 

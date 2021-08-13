@@ -5,20 +5,20 @@ module.exports = {
     name: 'weather',
     description: 'Search for the current weather in your desired city.',
     options: [{
-        name: 'input',
+        name: 'location',
         type: 'STRING',
         description: 'City, State',
         required: true,
     }],
     async execute(interaction) {
-        const value = interaction.options.getString('input');
+        const value = interaction.options.getString('location');
 
         weather.find({ search: value, degreeType: 'F' }, function (err, result) {
             try {
                 let embed = new discord.MessageEmbed()
                     .setTitle(`Weather - ${result[0].location.name}`)
                     .setColor("#ff2050")
-                    .setDescription("Temperature units can may be differ some time")
+                    .setDescription("Temperature units may be differ sometimes")
                     .addField("Temperature", `${result[0].current.temperature} F`, true)
                     .addField("Sky Text", result[0].current.skytext, true)
                     .addField("Humidity", result[0].current.humidity, true)
