@@ -1,5 +1,4 @@
 const { MessageActionRow, MessageSelectMenu } = require('discord.js');
-const fetch = require('node-fetch')
 
 module.exports = {
     name: 'animal',
@@ -23,7 +22,7 @@ module.exports = {
                         },
                         {
                             label: 'cat fact',
-                            description: 'Get a fact about dogs.',
+                            description: 'Get a fact about a cat',
                             value: 'cat fact',
                         },
                         {
