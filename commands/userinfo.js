@@ -1,7 +1,7 @@
 const discord = require('discord.js'); 
 
   module.exports = {
-	name: 'user-info',
+	name: 'userinfo',
 	description: 'Display info about yourself!',
 	async execute(interaction) {
 		const isBot = "Is not a bot";

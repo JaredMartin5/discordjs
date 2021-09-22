@@ -43,22 +43,4 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
-//deploy command
-client.on('messageCreate', async message => {
-	if (!client.application?.owner) await client.application?.fetch();
-
-	if (message.content.toLowerCase() === '!deploy' && message.author.id === client.application?.owner.id) {
-		const data = {
-			name: 'animal',
-			description: 'Get an image or fact about an animal.',
-
-		};
-
-		const command = await client.guilds.cache.get(guildId)?.commands.create(data);
-		// 		command.delete()
-		//   .then(console.log)
-		//   .catch(console.error);
-		console.log(command);
-	}
-});
 client.login(token);
