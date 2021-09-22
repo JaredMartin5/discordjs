@@ -1,12 +1,5 @@
 module.exports = {
-	name: '8ball',
-	description: 'Seek advice from the 8-Ball!',
-	options: [{
-		name: 'input',
-		type: 'STRING',
-		description: 'The question to ask the ball.',
-		required: true,
-	}],
+	name: 'eight-ball',
 
 	async execute(interaction) {
 		let answers = [
